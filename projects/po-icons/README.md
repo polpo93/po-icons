@@ -2,7 +2,9 @@
 
 This library extends MatIcons to accept icons from any material icons theme (default, outlined, two-tone, round, sharp).
 
-PoIcons accepts themes material icons and themes in format "maticon--theme". 
+PoIcons accepts themes material icons and themes in format "maticon--theme". There is typescript types defined for all of the material icons(not 100% accurate). 
+
+![welcome-po-icons](https://raw.githubusercontent.com/polpo93/po-icons/master/documentation/poicons-intellisense.png)
 
 Example: 
 ```html
