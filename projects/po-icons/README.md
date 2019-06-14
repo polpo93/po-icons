@@ -31,7 +31,7 @@ This line should be placed into the index.html inside the `<head></head>` tags:
 
 Then import the PoIconsModule from 'po-icons' to the module you want to use it in(app.module.ts).
 
-![welcome-po-icons](https://raw.githubusercontent.com/polpo93/po-icons/master/documentation/import-poicons.png)
+![welcome-po-icons](https://github.com/polpo93/po-icons/blob/master/documentation/import-poicons.png?raw=true)
 
 Now use `<po-icon></po-icon>` from any of your module's component.html.
 

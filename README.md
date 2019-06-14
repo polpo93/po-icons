@@ -1,6 +1,6 @@
 # Angular Po-icons
 
-![welcome-po-icons](https://raw.githubusercontent.com/polpo93/po-icons/master/documentation/welcome-poicons.png)
+![welcome-po-icons](https://github.com/polpo93/po-icons/blob/master/documentation/welcome-po-icons.png?raw=true)
 
 This is the demo with all source-codes on how po-icons was implemented.
 
