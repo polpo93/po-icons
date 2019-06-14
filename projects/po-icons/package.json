@@ -22,7 +22,7 @@
   "bugs": {
     "url": "https://github.com/polpo93/po-icons/issues"
   },
-  "version": "0.0.2",
+  "version": "0.0.5",
   "peerDependencies": {
     "@angular/common": "^8.0.0",
     "@angular/core": "^8.0.0"
