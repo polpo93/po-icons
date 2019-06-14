@@ -2,7 +2,18 @@ import { Component, ViewChild, ElementRef, ChangeDetectorRef } from '@angular/co
 
 @Component({
   selector: 'po-icon',
-  templateUrl: './po-icon.component.html',
+  template: `
+    <div #content style="display:none;">
+      <ng-content></ng-content>
+    </div>
+    <i [ngClass]="{
+      'material-icons': (theme === undefined),
+      'material-icons-outlined': (theme === 'outlined'),
+      'material-icons-two-tone': (theme === 'two-tone'),
+      'material-icons-round': (theme === 'round'),
+      'material-icons-sharp': (theme === 'sharp')
+    }">{{currentImg}}</i>
+  `
 })
 export class PoIconComponent {
 
@@ -36,4 +47,5 @@ export class PoIconComponent {
     this.currentImg = final[0];
     this.theme = final.length === 2 ? final[1] : undefined;
   }
+
 }

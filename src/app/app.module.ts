@@ -16,15 +16,11 @@ import {
 } from '@angular/material';
 
 import { AppComponent } from './app.component';
-import { PoIconComponent } from './po-icon/po-icon.component';
-
-import { TestIconComponent } from './test-icon/test-icon.component';
+import { PoIconsModule } from 'po-icons';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    PoIconComponent,
-    TestIconComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +35,8 @@ import { TestIconComponent } from './test-icon/test-icon.component';
     MatButtonModule,
     MatSelectModule,
     MatAutocompleteModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    PoIconsModule
   ],
   exports: [],
   providers: [],

@@ -1,6 +1,28 @@
 {
   "name": "po-icons",
-  "version": "0.0.1",
+  "author": {
+    "name": "Polpo",
+    "email": "polpoman@gmail.com"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/polpo93/po-icons"
+  },
+  "description": "Use any mat-icon from any material theme",
+  "keywords": [
+    "material",
+    "icon",
+    "polpo",
+    "po-icons"
+  ],
+  "homepage": "https://github.com/polpo93/po-icons#readme",
+  "bugs": {
+    "url": "https://github.com/polpo93/po-icons/issues"
+  },
+  "version": "0.0.2",
   "peerDependencies": {
     "@angular/common": "^8.0.0",
     "@angular/core": "^8.0.0"

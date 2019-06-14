@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PoIconsComponent } from './po-icons.component';
+import { PoIconComponent } from './po-icon.component';
 
 describe('PoIconsComponent', () => {
-  let component: PoIconsComponent;
-  let fixture: ComponentFixture<PoIconsComponent>;
+  let component: PoIconComponent;
+  let fixture: ComponentFixture<PoIconComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PoIconsComponent ]
+      declarations: [ PoIconComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PoIconsComponent);
+    fixture = TestBed.createComponent(PoIconComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

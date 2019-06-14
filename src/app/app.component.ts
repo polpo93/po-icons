@@ -1,8 +1,9 @@
-import { Component, ViewChild, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
 import { matIcons } from './mat-icons';
+import { PoThemes } from 'po-icons';
 
 @Component({
   selector: 'app-root',
@@ -12,13 +13,11 @@ import { matIcons } from './mat-icons';
 export class AppComponent implements OnInit {
 
   title = 'po-icons';
-  img: string = 'donut_small';
-  multi: string = 'donut_small--outlined';
-  themes: string[] = [undefined,'outlined', 'two-tone', 'round', 'sharp'];
+  themes: PoThemes[] = [undefined, 'outlined', 'round', 'sharp', 'two-tone'];
   form: FormGroup;
   icons: string[] = matIcons;
   filteredIcons$: Observable<string[]>;
-  showIconString: string;
+  iconString: string;
 
   constructor() {
     this.form = new FormGroup({
@@ -38,7 +37,7 @@ export class AppComponent implements OnInit {
   onChanges() {
     this.form.valueChanges.subscribe((value) => {
       if (value.icon !== null) {
-        this.showIconString = value.icon + (value.theme ? '--' + value.theme : '');
+        this.iconString = value.icon + (value.theme ? '--' + value.theme : '');
       }
     });
   }

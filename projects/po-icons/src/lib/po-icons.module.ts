@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
-import { PoIconsComponent } from './po-icons.component';
+import { CommonModule } from '@angular/common';
+import { PoIconComponent } from './po-icon.component';
 
 @NgModule({
-  declarations: [PoIconsComponent],
+  declarations: [PoIconComponent],
   imports: [
+    CommonModule
   ],
-  exports: [PoIconsComponent]
+  exports: [PoIconComponent]
 })
 export class PoIconsModule { }

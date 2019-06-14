@@ -1,24 +1,38 @@
 # Polpo-icons
 
+This library extends MatIcons to accept icons from any material icons theme (default, outlined, two-tone, round, sharp).
+
+PoIcons accepts themes material icons and themes in format "maticon--theme". 
+
+Example: 
+```html
+<po-icon>donut_small--outlined</po-icon>
+```
+
+Angular content change lifecycle hook is also implemented, so it accepts angular interpolation in html
+
+Example:
+```html
+<po-icon>{{icon}}</po-icon>
+```
+
 This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.0.
 
-## Code scaffolding
+## How to implement
 
-Run `ng generate component component-name --project po-icons` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project po-icons`.
-> Note: Don't forget to add `--project po-icons` or else it will be added to the default project in your `angular.json` file. 
+Reference css styles from Google's Material Icons.
 
-## Build
+This line should be placed into the index.html inside the `<head></head>` tags:
+```html
+<link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet">
+```
 
-Run `ng build po-icons` to build the project. The build artifacts will be stored in the `dist/` directory.
+Then import the PoIconsModule from 'po-icons' to the module you want to use it in(app.module.ts).
 
-## Publishing
+Now use `<po-icon></po-icon>` from any of your module's component.html.
 
-After building your library with `ng build po-icons`, go to the dist folder `cd dist/po-icons` and run `npm publish`.
+Remember syntax '--theme' after icon name to apply theme.
 
-## Running unit tests
+## Disclaimers
 
-Run `ng test po-icons` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+It is very early stage for this package, please use only for experimenting.

@@ -24,6 +24,18 @@
       ],
       "po-icons/*": [
         "dist/po-icons/*"
+      ],
+      "polpo": [
+        "dist/polpo"
+      ],
+      "polpo/*": [
+        "dist/polpo/*"
+      ],
+      "icon": [
+        "dist/icon"
+      ],
+      "icon/*": [
+        "dist/icon/*"
       ]
     }
   }
