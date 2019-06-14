@@ -17,6 +17,14 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "po-icons": [
+        "dist/po-icons"
+      ],
+      "po-icons/*": [
+        "dist/po-icons/*"
+      ]
+    }
   }
 }
