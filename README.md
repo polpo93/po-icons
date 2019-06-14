@@ -8,7 +8,7 @@ Po-icons uses google's material icons with all their themes.
 
 It behaves like mat-icon from angular materials. Check npm site of the po-icons for more deeper details.
 
-[https://www.npmjs.com/package/po-icons]: https://www.npmjs.com/package/po-icons
+https://www.npmjs.com/package/po-icons
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.2.
 
@@ -28,4 +28,5 @@ Use commands in order:
 Open your angular project. Then install po-icons with command `npm i po-icons`.
 
 More documentatio of the implementation in the npm package page at:
-[https://www.npmjs.com/package/po-icons]: https://www.npmjs.com/package/po-icons
+
+https://www.npmjs.com/package/po-icons
