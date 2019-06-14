@@ -1,27 +1,26 @@
-# AngularContent
+# Angular Po-icons
+
+![welcome-po-icons](https://raw.githubusercontent.com/polpo93/po-icons/master/documentation/welcome-po-icons.png)
+
+This is the demo with all source-codes on how po-icons was implemented.
+
+Po-icons uses google's material icons with all their themes.
+
+It behaves like mat-icon from angular materials. Check npm site of the po-icons for more deeper details.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.2.
 
-## Development server
+## Run demo
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Every command you should need if you have npm and nodejs installed.
 
-## Code scaffolding
+Use commands in order:
+1. `git clone https://github.com/polpo93/po-icons.git` to download the master repository.
+2. `cd ./po-icons/` to change yourself to the repository.
+3. `npm build-po-icons` to build the po-icons library.
+4. `npm install` to install dependencies for the angular itself.
+5. `npm run serve` to start the server in your machine at "http://localhost:4200/".
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Use po-icons in any Angular 8 project
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Open your angular project. Then install po-icons with command `npm i po-icons`.

@@ -33,6 +33,11 @@ Now use `<po-icon></po-icon>` from any of your module's component.html.
 
 Remember syntax '--theme' after icon name to apply theme.
 
+## More details
+
+Git repository for the source-code and demo:
+https://github.com/polpo93/po-icons
+
 ## Disclaimers
 
 It is very early stage for this package, please use only for experimenting.

@@ -1,11 +1,12 @@
 {
-  "name": "angular-content",
+  "name": "angular-po-icons",
   "version": "0.0.3",
   "scripts": {
     "ng": "./node_modules/.bin/ng",
     "start": "./node_modules/.bin/ng serve",
     "aot": "./node_modules/.bin/ng serve --aot",
     "build": "./node_modules/.bin/ng build",
+    "build-po-icons": "./node_modules/.bin/ng build po-icons",
     "test": "./node_modules/.bin/ng test",
     "lint": "./node_modules/.bin/ng lint",
     "e2e": "./node_modules/.bin/ng e2e"
