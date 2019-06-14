@@ -40,7 +40,7 @@ Remember syntax '--theme' after icon name to apply theme.
 ## More details
 
 Git repository for the source-code and demo:
-https://github.com/polpo93/po-icons
+[https://github.com/polpo93/po-icons]: https://github.com/polpo93/po-icons
 
 ## Disclaimers
 
