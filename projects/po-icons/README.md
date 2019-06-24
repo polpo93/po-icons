@@ -2,11 +2,12 @@
 
 This library extends MatIcons to accept icons from any material icons theme (default, outlined, two-tone, round, sharp). All of those icons listed in material design page is not working in the font-icons. Workaround with those icons, is to add them in the custom svg sprite and import the sprite into the po-icons.
 
-There is typescript types defined for all of the material icons(not 100% accurate). 
+There is typescript types defined for all of the material icons(not 100% accurate).
 
 ![welcome-po-icons](https://github.com/polpo93/po-icons/blob/master/documentation/poicon-intellisense.png?raw=true)
 
-Example: 
+Example:
+
 ```html
 <po-icon>donut_small--outlined</po-icon>
 ```
@@ -14,17 +15,19 @@ Example:
 Angular content change lifecycle hook is also implemented, so it accepts angular interpolation in html
 
 Example:
+
 ```html
 <po-icon>{{icon}}</po-icon>
 ```
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.0.
+This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.2.15.
 
 ## How to implement
 
 Reference css styles from Google's Material Icons.
 
 This line should be placed into the index.html inside the `<head></head>` tags:
+
 ```html
 <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet">
 ```
@@ -87,7 +90,7 @@ To add your svg sprite into po-icons (currently supports only one svg sprite) do
 
 ## More details
 
-Git repository for the source-code and demo: https://github.com/polpo93/po-icons
+Git repository for the source-code and demo: <https://github.com/polpo93/po-icons>
 
 ## Disclaimers
 

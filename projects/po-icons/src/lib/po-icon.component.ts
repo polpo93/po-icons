@@ -12,7 +12,7 @@ export class PoIconComponent implements DoCheck, AfterViewChecked {
   @Input() color?: string;
   @Input() bgColor?: string;
   @Input() size?: number;
-  @ViewChild('content', {static: true}) contentWrapper: ElementRef;
+  @ViewChild('content') contentWrapper: ElementRef;
   content = ''; // store value
 
   theme: string;
