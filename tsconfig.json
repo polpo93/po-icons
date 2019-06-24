@@ -19,24 +19,13 @@
       "dom"
     ],
     "paths": {
-      "po-icons": [
-        "dist/po-icons"
-      ],
-      "po-icons/*": [
-        "dist/po-icons/*"
-      ],
-      "polpo": [
-        "dist/polpo"
-      ],
-      "polpo/*": [
-        "dist/polpo/*"
-      ],
-      "icon": [
-        "dist/icon"
-      ],
-      "icon/*": [
-        "dist/icon/*"
-      ]
+      "@assets/*": ["src/assets/*"],
+      "po-icons": ["dist/po-icons"],
+      "po-icons/*": ["dist/po-icons/*"],
+      "polpo": ["dist/polpo"],
+      "polpo/*": ["dist/polpo/*"],
+      "icon": ["dist/icon"],
+      "icon/*": ["dist/icon/*"]
     }
   }
 }

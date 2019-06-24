@@ -12,10 +12,10 @@
     <h2>Test icons</h2>
     <form [formGroup]="form">
       <mat-form-field style="padding: 8px;">
-        <mat-label>Theme</mat-label>
-        <mat-select [formControlName]="'theme'">
-          <mat-option *ngFor="let theme of themes" [value]="theme">
-            {{theme?theme:'default'}}
+        <mat-label>Theme or Sprite</mat-label>
+        <mat-select [formControlName]="'collection'">
+          <mat-option *ngFor="let collection of collections" [value]="collection">
+            {{collection?collection:'default'}}
           </mat-option>
         </mat-select>
       </mat-form-field>
@@ -28,9 +28,32 @@
         </mat-autocomplete>
       </mat-form-field>
       <mat-error *ngIf="form.invalid === true">{{form.values | json}}</mat-error>
+      <mat-form-field style="padding: 8px;">
+        <input matInput type="number" placeholder="size" [formControlName]="'size'">
+      </mat-form-field>
     </form>
-    <po-icon>{{iconString}}</po-icon>
-    <p>&lt;po-icon&gt;{{iconString}}&lt;/po-icon&gt;</p>
+    <div style="width:100%;">
+      <button mat-flat-button color="primary" style="width:92px;margin:4px;" (click)="openColorpicker()">
+        <div style="display:flex;flex-flow:row;align-items:center;justify-content: space-between">
+          <span>color</span>
+          <div style="background-color:white;width:24px;height:24px;display:flex;justify-content:center;border:1px solid black;border-radius: 5px">
+            <div [ngStyle]="{'background-color':color}"  style="width:10px;height:10px;align-self:center;">
+            </div>
+          </div>
+        </div>
+      </button>
+      <button mat-flat-button color="primary" style="width:112px;margin:4px;" (click)="openBgColorpicker()">
+        <div style="display:flex;flex-flow:row;align-items:center;justify-content: space-between">
+          <span>bg-color</span>
+          <div style="background-color:white;width:24px;height:24px;display:flex;justify-content:center;border:1px solid black;border-radius: 5px">
+            <div [ngStyle]="{'background-color':bgColor}" style="width:10px;height:10px;align-self:center;">
+            </div>
+          </div>
+        </div>
+      </button>
+    </div>
+    <po-icon [color]="color" [bgColor]="bgColor" [size]="size">{{iconString}}</po-icon>
+    <p>&lt;po-icon{{ color !== '#000' && color !== '#000000' ? ' [color]="' + color + '"' : ''}}{{ bgColor !== '#fff' && bgColor !== '#ffffff' ? ' [bgColor]="' + bgColor + '"' : ''}}{{ size !== '24px' ? ' [size]="' + size + '"' : ''}}&gt;{{iconString}}&lt;/po-icon&gt;</p>
   </div>
 </div>
 

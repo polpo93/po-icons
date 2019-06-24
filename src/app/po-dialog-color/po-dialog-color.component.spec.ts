@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PoIconComponent } from './po-icon.component';
+import { PoDialogColorComponent } from './po-dialog-color.component';
 
-describe('PoIconsComponent', () => {
-  let component: PoIconComponent;
-  let fixture: ComponentFixture<PoIconComponent>;
+describe('PoDialogColorComponent', () => {
+  let component: PoDialogColorComponent;
+  let fixture: ComponentFixture<PoDialogColorComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PoIconComponent ]
+      declarations: [ PoDialogColorComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PoIconComponent);
+    fixture = TestBed.createComponent(PoDialogColorComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,6 +1,7 @@
-import { NgModule } from '@angular/core';
+import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PoIconComponent } from './po-icon.component';
+import { PoIconService } from './po-icon.service';
 
 @NgModule({
   declarations: [PoIconComponent],
@@ -9,4 +10,12 @@ import { PoIconComponent } from './po-icon.component';
   ],
   exports: [PoIconComponent]
 })
-export class PoIconsModule { }
+
+export class PoIconsModule {
+  static forRoot(): ModuleWithProviders {
+    return {
+      ngModule: PoIconsModule,
+      providers: [PoIconService]
+    };
+  }
+}

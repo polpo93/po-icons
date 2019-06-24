@@ -1,28 +1,27 @@
-import { Component, ViewChild, ElementRef, ChangeDetectorRef } from '@angular/core';
+import { Component, ViewChild, ElementRef, ChangeDetectorRef, DoCheck, AfterViewChecked, Input } from '@angular/core';
+import { PoIconService } from './po-icon.service';
 
 @Component({
+  // tslint:disable-next-line:component-selector
   selector: 'po-icon',
-  template: `
-    <div #content style="display:none;">
-      <ng-content></ng-content>
-    </div>
-    <i [ngClass]="{
-      'material-icons': (theme === undefined),
-      'material-icons-outlined': (theme === 'outlined'),
-      'material-icons-two-tone': (theme === 'two-tone'),
-      'material-icons-round': (theme === 'round'),
-      'material-icons-sharp': (theme === 'sharp')
-    }">{{currentImg}}</i>
-  `
+  templateUrl: './po-icon.component.html',
+  styleUrls: ['./po-icon.component.scss']
 })
-export class PoIconComponent {
+export class PoIconComponent implements DoCheck, AfterViewChecked {
 
-  @ViewChild("content", {static: true}) contentWrapper: ElementRef;
-  content: string = '';
-  currentImg: string = '';
+  @Input() color?: string;
+  @Input() bgColor?: string;
+  @Input() size?: number;
+  @ViewChild('content', {static: true}) contentWrapper: ElementRef;
+  content = ''; // store value
+
   theme: string;
 
-  constructor(private cd: ChangeDetectorRef) {}
+  currentIcon = '';
+  namespace: string;
+  isSprite: boolean = undefined;
+
+  constructor(private poIconService: PoIconService) {}
 
   /** required for angular to do change detection for the content */
   ngDoCheck() { }
@@ -34,8 +33,8 @@ export class PoIconComponent {
       // dont move timeout out of the if scope. loop goes to infinite.
       setTimeout(() => {
         this.content = c;
-        this.setImage(c); 
-      }) 
+        this.setImage(c);
+      });
     }
   }
 
@@ -43,9 +42,26 @@ export class PoIconComponent {
   setImage(c: string) {
     let final = c.split('--');
     // style display:none adds white spaces, this removes them.
-    final = final.map(string => string.replace(/ /g,''));
-    this.currentImg = final[0];
-    this.theme = final.length === 2 ? final[1] : undefined;
+    final = final.map((str) => str.replace(/ /g, ''));
+
+    this.currentIcon = final[0];
+    this.namespace = final.length === 2 ? final[1] : undefined;
+    const type = this.checkNameSpace(this.namespace);
+    if (type === 'sprite') {
+      this.isSprite = true;
+    } else if (type === 'fontIcon') {
+      this.isSprite = false;
+    } else {
+      this.isSprite = undefined;
+    }
   }
 
+  checkNameSpace(namespace: string): 'fontIcon' | 'sprite' {
+    if (this.poIconService.getSprite(namespace)) {
+      return 'sprite';
+    } else if (this.poIconService.getFontIcons(namespace)) {
+      return 'fontIcon';
+    }
+    return;
+  }
 }

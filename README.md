@@ -1,10 +1,12 @@
 # Angular Po-icons
 
-![welcome-po-icons](https://github.com/polpo93/po-icons/blob/master/documentation/welcome-po-icons.png?raw=true)
+![welcome-po-icons](https://github.com/polpo93/po-icons/blob/master/documentation/svgpage.png?raw=true)
 
 This is the demo with all source-codes on how po-icons was implemented.
 
-Po-icons uses google's material icons with all their themes.
+Po-icons uses google's material icons(font-icons) with all their themes.
+
+There is also support for one custom svg sprite.
 
 It behaves like mat-icon from angular materials. Check npm site of the po-icons for more deeper details.
 

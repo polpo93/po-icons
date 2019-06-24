@@ -4,6 +4,8 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { ColorSketchModule } from 'ngx-color/sketch';
+
 import {
   MatCommonModule,
   MatIconModule,
@@ -12,15 +14,19 @@ import {
   MatRadioModule,
   MatButtonModule,
   MatSelectModule,
+  MatSliderModule,
+  MatDialogModule,
   MatAutocompleteModule
 } from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { PoIconsModule } from 'po-icons';
+import { PoDialogColorComponent } from './po-dialog-color/po-dialog-color.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    PoDialogColorComponent
   ],
   imports: [
     BrowserModule,
@@ -34,12 +40,18 @@ import { PoIconsModule } from 'po-icons';
     MatRadioModule,
     MatButtonModule,
     MatSelectModule,
+    MatSliderModule,
+    MatDialogModule,
     MatAutocompleteModule,
     BrowserAnimationsModule,
+    ColorSketchModule,
     PoIconsModule
   ],
   exports: [],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [
+    PoDialogColorComponent
+  ]
 })
 export class AppModule { }
