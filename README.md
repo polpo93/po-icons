@@ -12,7 +12,7 @@ It behaves like mat-icon from angular materials. Check npm site of the po-icons 
 
 <https://www.npmjs.com/package/po-icons>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.2.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.2.15.
 
 ## Run demo
 
