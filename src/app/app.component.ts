@@ -68,7 +68,7 @@ export class AppComponent implements OnInit {
     });
     this.form.controls.size.valueChanges.subscribe((value) => {
       this.resize(value);
-    })
+    });
   }
 
   private _filter(value: string): string[] {

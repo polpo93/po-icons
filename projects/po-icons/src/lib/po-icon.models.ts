@@ -2811,7 +2811,7 @@ export type PoIconsTwoTone =
 | 'zoom_out--two-tone'
 | 'zoom_out_map--two-tone';
 
-export type PoIconsRound = 
+export type PoIconsRound =
 '3d_rotation--round'
 | 'calendar_today--round'
 | 'list_alt--round'
