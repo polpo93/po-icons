@@ -2,24 +2,25 @@
   <h1>
     Welcome to {{ title }}!
   </h1>
-  <div style="border: 1px solid black;display:flex;flex-flow:column;align-items: center;width:200px;align-self: center;">
+  <div style="border: 1px solid black;border-radius:5px;display:flex;flex-flow:column;align-items: center;width:240px;align-self: center;">
     <h2>Po-icon</h2>
-    <span *ngFor="let theme of themes">
-      {{theme?theme:'default'}}: <po-icon>donut_small{{theme?('--'+theme):''}}</po-icon>
+    <span *ngFor="let theme of themes" style="display:flex;flex-flow:row;">
+      {{theme?theme:'default'}}: <po-icon [size]="'19px'">donut_small{{theme?('--'+theme):''}}</po-icon>
     </span>
   </div>
   <div style="display:flex;flex-flow:column;padding:16px;">
-    <h2>Test icons</h2>
-    <form [formGroup]="form">
-      <mat-form-field style="padding: 8px;">
-        <mat-label>Theme or Sprite</mat-label>
-        <mat-select [formControlName]="'collection'">
+    <h2 style="display:flex;flex-flow:row;justify-content:center;">Test icons <po-icon style="padding-left: 10px;" [color]="color" [bgColor]="bgColor" [size]="size">{{iconString}}</po-icon></h2>
+    <form [formGroup]="form" style="display:flex;flex-flow:column;width:234px;align-self:center;">
+      <mat-form-field style="padding:8px;" appearance="outline">
+        <mat-label>Theme</mat-label>
+        <mat-select placeholder="Choose theme" [formControlName]="'collection'">
           <mat-option *ngFor="let collection of collections" [value]="collection">
-            {{collection?collection:'default'}}
+            {{collection}}
           </mat-option>
         </mat-select>
       </mat-form-field>
-      <mat-form-field style="padding: 8px;">
+      <mat-form-field style="padding: 8px;" appearance="outline">
+        <mat-label>Icon</mat-label>
         <input type="text" placeholder="Pick icon" aria-label="Number" matInput [formControlName]="'icon'" [matAutocomplete]="auto">
         <mat-autocomplete #auto="matAutocomplete">
           <mat-option *ngFor="let icon of filteredIcons$ | async" [value]="icon">
@@ -28,7 +29,7 @@
         </mat-autocomplete>
       </mat-form-field>
       <mat-error *ngIf="form.invalid === true">{{form.values | json}}</mat-error>
-      <mat-form-field style="padding: 8px;">
+      <mat-form-field style="padding: 8px;" appearance="outline">
         <input matInput type="number" placeholder="size" [formControlName]="'size'">
       </mat-form-field>
     </form>
@@ -52,7 +53,6 @@
         </div>
       </button>
     </div>
-    <po-icon [color]="color" [bgColor]="bgColor" [size]="size">{{iconString}}</po-icon>
     <p>&lt;po-icon{{ color !== '#000' && color !== '#000000' ? ' [color]="' + color + '"' : ''}}{{ bgColor !== '#fff' && bgColor !== '#ffffff' ? ' [bgColor]="' + bgColor + '"' : ''}}{{ size !== '24px' ? ' [size]="' + size + '"' : ''}}&gt;{{iconString}}&lt;/po-icon&gt;</p>
   </div>
 </div>

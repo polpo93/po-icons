@@ -1,4 +1,4 @@
-export type PoThemes = undefined|'outlined'|'two-tone'|'round'|'sharp';
+export type PoThemes = 'baseline'|'outlined'|'two-tone'|'round'|'sharp';
 
 export type PoIcons = PoIconsDefault | PoIconsOutlined | PoIconsTwoTone | PoIconsRound | PoIconsSharp;
 export type PoIconsDefault = '3d_rotation'

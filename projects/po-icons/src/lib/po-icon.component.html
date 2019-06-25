@@ -1,8 +1,8 @@
 <div #content style="display:none;">
   <ng-content></ng-content>
 </div>
-<i *ngIf="isSprite === false" [ngClass]="{
-  'material-icons': (namespace === undefined),
+<i [ngClass]="{
+  'material-icons': (namespace === 'baseline'),
   'material-icons-outlined': (namespace === 'outlined'),
   'material-icons-two-tone': (namespace === 'two-tone'),
   'material-icons-round': (namespace === 'round'),
@@ -12,14 +12,4 @@
   'background-color': bgColor ? bgColor : 'white',
   'font-size': size ? size : '24px'
 }">{{currentIcon}}</i>
-<svg *ngIf="isSprite === true"
-  class="po-icon"
-  [ngStyle]="{
-    'fill': color ? color : 'black',
-    'background-color': bgColor ? bgColor : 'white',
-    'width': size ? size : '24px',
-    'height': size ? size : '24px'
-  }">
-  <use attr.xlink:href="{{namespace + '.svg#' + currentIcon}}"></use>
-</svg>
 

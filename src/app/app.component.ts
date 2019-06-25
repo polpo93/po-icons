@@ -3,12 +3,10 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
 import { matIcons } from './mat-icons';
-import { PoThemes, PoIconService } from 'po-icons';
+import { PoThemes } from 'po-icons';
 
-import '@assets/open-iconic.svg';
 import { MatDialog } from '@angular/material';
 import { PoDialogColorComponent } from './po-dialog-color/po-dialog-color.component';
-import { openIconics } from './open-iconic';
 
 @Component({
   selector: 'app-root',
@@ -23,12 +21,10 @@ export class AppComponent implements OnInit {
   color = '#000';
   size = '24px';
 
-  sprites: string[] = ['open-iconic'];
-  svgs: string[] = openIconics;
-  themes: PoThemes[] = [undefined, 'outlined', 'round', 'sharp', 'two-tone'];
+  themes: PoThemes[] = ['baseline', 'outlined', 'round', 'sharp', 'two-tone'];
   icons: string[] = matIcons;
 
-  collections = this.sprites.concat(this.themes);
+  collections = this.themes;
 
   form: FormGroup;
 
@@ -36,14 +32,10 @@ export class AppComponent implements OnInit {
   iconString: string;
 
   constructor(
-    private poIconService: PoIconService,
     private matDialog: MatDialog
   ) {
-    this.poIconService.registerSprite('icon-sprite');
-    this.poIconService.registerSprite('open-iconic');
-    this.themes.forEach((theme) => this.poIconService.registerFontIcons(theme));
     this.form = new FormGroup({
-      collection: new FormControl(undefined),
+      collection: new FormControl(undefined, [Validators.required]),
       icon: new FormControl(undefined, [Validators.required]),
       size: new FormControl(24, [Validators.required])
     });
@@ -52,7 +44,7 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     this.filteredIcons$ = this.form.controls.icon.valueChanges.pipe(
       startWith(''),
-      map(value => this._filter(value))
+      map((value) => this._filter(value, this.icons))
     );
     this.onChanges();
   }
@@ -63,21 +55,17 @@ export class AppComponent implements OnInit {
         this.iconString = value.icon + (value.collection ? '--' + value.collection : '');
       }
     });
-    this.form.controls.collection.valueChanges.subscribe(() => {
+    /*this.form.controls.collection.valueChanges.subscribe(() => {
       this.form.controls.icon.setValue('');
-    });
+    });*/
     this.form.controls.size.valueChanges.subscribe((value) => {
       this.resize(value);
     });
   }
 
-  private _filter(value: string): string[] {
+  private _filter(value: string, list: string[]): string[] {
     const filterValue = value.toLowerCase();
-    const allIcons = this.icons.concat(this.svgs);
-    if (this.sprites.findIndex((sprite) => sprite === this.form.controls.collection.value) >= 0) {
-      return this.svgs.filter(option => option.toLowerCase().includes(filterValue));
-    }
-    return allIcons.filter(option => option.toLowerCase().includes(filterValue));
+    return list.filter(option => option.toLowerCase().includes(filterValue));
   }
 
   changeComplete(event) {

@@ -6,9 +6,9 @@ This is the demo with all source-codes on how po-icons was implemented.
 
 Po-icons uses google's material icons(font-icons) with all their themes.
 
-There is also support for one custom svg sprite.
-
 It behaves like mat-icon from angular materials. Check npm site of the po-icons for more deeper details.
+
+Use this library only for experimenting. Not recommended for production.
 
 <https://www.npmjs.com/package/po-icons>
 
@@ -26,7 +26,9 @@ Use commands in order:
 4. `npm run build-po-icons` to build the po-icons library.
 5. `npm run start` to start the server in your machine at <http://localhost:4200/>
 
-## Use po-icons in any Angular 8 project
+## Angular support
+
+Library supports angular 7 and newer. Tested with 7.2.15.
 
 Open your angular project. Then install po-icons with command `npm i po-icons`.
 

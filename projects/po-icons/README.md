@@ -1,6 +1,6 @@
 # Polpo-icons
 
-This library extends MatIcons to accept icons from any material icons theme (default, outlined, two-tone, round, sharp). All of those icons listed in material design page is not working in the font-icons. Workaround with those icons, is to add them in the custom svg sprite and import the sprite into the po-icons.
+This library extends MatIcons to accept icons from any material icons theme (default, outlined, two-tone, round, sharp). All of those icons listed in material design page is not working in the font-icons. Look into better alternatives for the support of more icons.
 
 There is typescript types defined for all of the material icons(not 100% accurate).
 
@@ -54,44 +54,19 @@ use like following:
 <po-icon [color]="#7ed321" [bgColor]="#4a4a4a" [size]="25px">account-login--open-iconic</po-icon>
 ```
 
-## Custom SVG sprite
-
-To add your svg sprite into po-icons (currently supports only one svg sprite) do followings:
-
-1. Add your svg sprite to the assets folder
-
-2. Import svg to the component you want to use it
-
-    ```ts
-    import '@assets/custom-sprite.svg';
-    ```
-
-    (@assets can be replaced with relative path "../../assets/custom-sprite.svg", or use typescript's path module resolution)
-
-3. Register svg sprite to the po-icons service
-
-    ```ts
-    import { PoIconService } from 'po-icons';
-    @Component({
-      //..
-    })
-    export class AppComponent {
-      constructor(private poIconService: PoIconService) {
-        this.poIconService.registerSprite('custom-sprite-name-here'); // match with svg filename without the ".svg" end
-      }
-    }
-    ```
-
-4. Use custom-sprite icons.
-
-    ```html
-    <po-icon>icon-name--sprite-name</po-icon>
-    ```
-
 ## More details
 
+Do not use for production. This is experimental library.
+
+### Better alternatives
+
+1. Make own svg sprite.
+   - Pros: most flexible (modifications, animations, extendability...).
+   - Cons: svg may affect performance and svg sprites are supported only by newest browsers
+2. Use material design's non-spec-app (.png)
+   - Pros: get all newest icons in use from the material-design page.
+   - Cons: png is not flexible.
+
+## Demo
+
 Git repository for the source-code and demo: <https://github.com/polpo93/po-icons>
-
-## Disclaimers
-
-It is very early stage for this package, please use only for experimenting.

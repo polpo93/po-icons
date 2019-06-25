@@ -1,11 +1,9 @@
-import { Component, ViewChild, ElementRef, ChangeDetectorRef, DoCheck, AfterViewChecked, Input } from '@angular/core';
-import { PoIconService } from './po-icon.service';
+import { Component, ViewChild, ElementRef, DoCheck, AfterViewChecked, Input } from '@angular/core';
 
 @Component({
   // tslint:disable-next-line:component-selector
   selector: 'po-icon',
-  templateUrl: './po-icon.component.html',
-  styleUrls: ['./po-icon.component.scss']
+  templateUrl: './po-icon.component.html'
 })
 export class PoIconComponent implements DoCheck, AfterViewChecked {
 
@@ -15,13 +13,10 @@ export class PoIconComponent implements DoCheck, AfterViewChecked {
   @ViewChild('content') contentWrapper: ElementRef;
   content = ''; // store value
 
-  theme: string;
-
   currentIcon = '';
   namespace: string;
-  isSprite: boolean = undefined;
 
-  constructor(private poIconService: PoIconService) {}
+  constructor() {}
 
   /** required for angular to do change detection for the content */
   ngDoCheck() { }
@@ -43,25 +38,7 @@ export class PoIconComponent implements DoCheck, AfterViewChecked {
     let final = c.split('--');
     // style display:none adds white spaces, this removes them.
     final = final.map((str) => str.replace(/ /g, ''));
-
     this.currentIcon = final[0];
     this.namespace = final.length === 2 ? final[1] : undefined;
-    const type = this.checkNameSpace(this.namespace);
-    if (type === 'sprite') {
-      this.isSprite = true;
-    } else if (type === 'fontIcon') {
-      this.isSprite = false;
-    } else {
-      this.isSprite = undefined;
-    }
-  }
-
-  checkNameSpace(namespace: string): 'fontIcon' | 'sprite' {
-    if (this.poIconService.getSprite(namespace)) {
-      return 'sprite';
-    } else if (this.poIconService.getFontIcons(namespace)) {
-      return 'fontIcon';
-    }
-    return;
   }
 }
